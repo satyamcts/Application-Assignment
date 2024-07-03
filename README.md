@@ -1,4 +1,8 @@
-# Assignment
+# Application-Assignment (Angular Cli:- V16.2.14 & Node:v18.18.2) 
+
+## npm install
+
+This command run for node_module folder
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
 
