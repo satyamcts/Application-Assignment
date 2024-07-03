@@ -1,0 +1,13 @@
+<div class="confirmation-dialog">
+    <h1 mat-dialog-title>Delete Confirmation</h1>
+    <div mat-dialog-content>
+        <p>Are you sure you want to delete this username data - {{data.name}} ?</p>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button class="btn btn-primary text-uppercase fw-bold m-2" (click)="onDeleteClick()">
+            <span>Yes</span>
+        </button>
+        <button mat-button (click)="onCancelClick()"
+            class="btn btn-danger text-uppercase fw-bold">Cancel</button>
+    </div>
+</div>

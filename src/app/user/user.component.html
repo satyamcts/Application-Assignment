@@ -1,0 +1,114 @@
+<div class="container">
+    <div class="row mb-3 mt-5">
+      <div class="col-md-12 col-sm-12">
+        <input
+          type="text"
+          id="myInput"
+          class="form-control"
+          (input)="filterUser()"
+          [(ngModel)]="filterData"
+          placeholder="Search for Username"
+        />
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <table class="table table-hover table-bordered">
+          <thead>
+            <tr>
+              <th>SNo.</th>
+              <th>Username</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of userList; let i = index">
+              <td>{{ i + 1 }}.</td>
+              <td>{{ user.username }}</td>
+              <td>{{ user.phone }}</td>
+              <td>{{ user.email }}</td>
+              <td>
+                <div class="btn-group">
+                    <button class="btn btn-primary edit-button" (click)="editUser(user)">
+                      Edit
+                    </button>
+                    <button class="btn btn-danger delete-button" (click)="deleteUser(user.id, user.username)">
+                      Delete
+                    </button>
+                  </div>
+              </td>
+            </tr>
+            <tr *ngIf="userList.length === 0">
+              <td colspan="5">Data Not Found</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div
+  id="userEditModel"
+  class="modal fade editModal"
+  tabindex="-1"
+  role="dialog"
+  data-backdrop="static"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">User Edit</h5>
+      </div>
+      <div class="modal-body" *ngIf="selectedUser">
+        <form [formGroup]="userForm" (ngSubmit)="updateUser()">
+          <div class="col-md-12 col-12" >
+            <div class="form-group row">
+              <div class="col-md-6 col-12">
+                <label class="control-label">Phone*</label>
+                <input type="text" class="form-control" formControlName="phone" placeholder="Phone" />
+                <div
+                  *ngIf="
+                  userForm?.get('phone')?.hasError('required') &&
+                  userForm?.get('phone')?.touched
+                  "
+                >
+                  <span class="error-message">Phone No. is required</span>
+                </div>
+              </div>
+              <div class="col-md-6 col-12">
+                <label class="control-label">Email*</label>
+                <input type="text" class="form-control" formControlName="email" placeholder="Email" />
+                <div
+                  *ngIf="
+                  userForm?.get('email')?.hasError('required') &&
+                  userForm?.get('email')?.touched
+                  "
+                >
+                  <span class="error-message">Email is required</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mb-4 mt-4">
+            <div class="btn-group">
+                <button class="btn btn-success text-uppercase" type="submit" [disabled]="userForm.invalid">
+                    Update
+                  </button>
+                    <button
+                        class="btn btn-primary text-uppercase fw-bold"
+                        type="button"  (click)="closeModal()"
+                    >
+                Close
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  

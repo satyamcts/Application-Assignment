@@ -1,0 +1,25 @@
+.confirmation-dialog {
+    text-align: center;
+    padding: 30px;
+    
+    h1 {
+        font-size: 22px;
+        font-weight: bold !important;
+        margin-bottom: 5px;
+    }
+
+    .btn {
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    .mat-mdc-dialog-actions {
+        justify-content: center;
+    }
+
+    p{
+        color: #dc2424;
+        font-weight: 400;
+    }
+}
