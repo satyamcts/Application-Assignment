@@ -1,4 +1,7 @@
-# Application-Assignment
+# Application-Assignment  (Angular Cli V16.2.14 & Node:v18.18.2)
+
+<p>**npm install**</p>
+<p>**ng serve**</p>
 
 #Angular:
 <p>-Simple Angular UI with one search field for Username. If input is given as “Raj” it should bring results like “Rajesh”, “Raj”, “Rajkumar”, “Mohanraj”, etc.</p>
