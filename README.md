@@ -1,4 +1,4 @@
-# Application-Assignment (Angular Cli:- V16.2.14 & Node:v18.18.2) 
+# Application-Assignment (Angular Cli:- v16.2.14 & Node:- v18.18.2) 
 
  ## Angular Task:
 <p>-Simple Angular UI with one search field for Username. If input is given as “Raj” it should bring results like “Rajesh”, “Raj”, “Rajkumar”, “Mohanraj”, etc.</p>
